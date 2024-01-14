@@ -31,6 +31,14 @@
 
         function update() {
             currentSeconds -= 1;
+            if (currentSeconds < 1) {
+                stop();
+
+                const audio = new Audio('../../../public/timer-end.mp3'); // Replace with the actual path to your sound file
+                // Play the audio
+                audio.play();
+
+            }
             const hours = document.getElementById('hours');
             const minutes = document.getElementById('minutes');
             const seconds = document.getElementById('seconds');
@@ -75,12 +83,13 @@
     
     <div>
         <label for="hours">Hours</label>
-        <input type="number" id="hours">
+        <input type="number" id="hours" min="0">
         <label for="minutes">Minutes</label>
-        <input type="number" id="minutes">
+        <input type="number" id="minutes" min="0">
         <label for="seconds">Seconds</label>
-        <input type="number" id="seconds">
+        <input type="number" id="seconds" min="0">
     </div>
+    <p>(Sound effect by Sound Effect by floraphonic from Pixabay)</p>
 
     <script>reset()</script>
 
