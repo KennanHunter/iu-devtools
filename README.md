@@ -1,1 +1,3 @@
-# Developer-tools-with-Kennan
+# Developer Tools
+
+Developed by Jules Fagard and Kennan Hunter
