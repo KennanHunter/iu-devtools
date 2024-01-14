@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Hash Generator</title>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/crypto-js.js"></script>
+    </head>
+
+
+    <body>
+
+    <label for="input">Enter string to hash:</label>
+    <input type="text" id="input" placeholder="Type here">
+
+    <script>
+        function hash() {
+            const input = document.getElementById("input").value;
+    
+            const md5Hash = CryptoJS.MD5(input).toString();
+            const sha1Hash = CryptoJS.SHA1(input).toString();
+            const sha256Hash = CryptoJS.SHA256(input).toString();
+    
+            document.getElementById("md5").innerText = md5Hash;
+            document.getElementById("sha1").innerText = sha1Hash;
+            document.getElementById("sha256").innerText = sha256Hash;
+        }
+    </script>
+
+    <a href="../../../index.html">Home</a>
+
+    <button onclick="hash()">Hash</button>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Algorithm</th>
+                <th>Hash Value</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>MD5</td>
+                <td id="md5"></td>
+            </tr>
+            <tr>
+                <td>SHA-1</td>
+                <td id="sha1"></td>
+            </tr>
+            <tr>
+                <td>SHA-256</td>
+                <td id="sha256"></td>
+            </tr>
+        </tbody>
+    </table>
+
+
+    </body>
+
+</html>
