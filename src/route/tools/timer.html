@@ -48,6 +48,8 @@
             minutes.value = Math.floor(currentSeconds/60);
             seconds.value = currentSeconds % 60;
 
+            document.title = `${hours.value < 10 ? '0': ''}${hours.value}:${minutes.value < 10 ? '0': ''}${minutes.value}:${seconds.value < 10 ? '0': ''}${seconds.value}`;
+
             
         }
 
