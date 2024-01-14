@@ -1,0 +1,42 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevTools - string reverser</title>
+</head>
+<body>
+
+    <!-- defining all the function BEGINNING -->
+    <script>
+        // reverse the text
+        function reverse() {
+            let input = document.getElementById('input');
+
+            input.value = input.value.split("").reverse().join('');
+
+            
+        }
+    </script>
+    <!-- defining all the function END -->
+    
+    <a href="../index.html">Home</a>
+
+    <h1>
+        String reverser
+    </h1>
+
+    <textarea id="input" cols="100" rows="10"
+        placeholder="Type your text here...">Try to reverse this text. !ti did uoy gnizamA</textarea>
+
+    <br>
+
+    <button onclick="reverse()">reverse</button>
+
+
+
+</body>
+</html>
+
+

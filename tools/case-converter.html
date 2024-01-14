@@ -1,0 +1,59 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevTools - case converter</title>
+</head>
+<body>
+
+    <!-- defining all the function BEGINNING -->
+    <script>
+        // transform text to lowercase
+        function lowercase() {
+            let input = document.getElementById('input');
+            input.value = input.value.toLowerCase();
+        }
+        // transform text to UPPERCASE
+        function uppercase() {
+            let input = document.getElementById('input');
+            input.value = input.value.toUpperCase();
+        }
+        // transform text to Sentence case
+        function sentenceCase() {
+            let input = document.getElementById('input');
+            input.value = input.value[0].toUpperCase() + input.value.substring(1).toLowerCase();
+        }
+        // transform text to Title Case
+        function titleCase() {
+            let input = document.getElementById('input');
+            input.value = input.value.replace(/\w\S*/g, function (txt) {
+                return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
+            });
+        }
+    </script>
+    <!-- defining all the function END -->
+    
+    <a href="../index.html">Home</a>
+
+    <h1>
+        Case converter
+    </h1>
+
+    <textarea id="input" cols="100" rows="10"
+        placeholder="Type your text here...">Change this text, this IS just AN EXAMPLE</textarea>
+
+    <br>
+
+    <button onclick="lowercase()">lowercase</button>
+    <button onclick="uppercase()">UPPERCASE</button>
+    <button onclick="sentenceCase()">Sentence case</button>
+    <button onclick="titleCase()">Title case</button>
+
+
+
+</body>
+</html>
+
+

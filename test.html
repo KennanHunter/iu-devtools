@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Item Counter</title>
+</head>
+<body>
+    <h2>Item Counter</h2>
+
+    <label for="itemNumber">Enter the number of items to display:</label>
+    <input type="number" id="itemNumber" min="1" value="1">
+    <button onclick="displayItems()">Display Items</button>
+
+    <br>
+
+    <textarea id="outputTextarea" rows="5" cols="30" readonly></textarea>
+
+    <script>
+        // Your list of items
+        const itemList = [
+            'Item 1',
+            'Item 2',
+            'Item 3',
+            'Item 4',
+            'Item 5',
+            'Item 6',
+            'Item 7',
+            'Item 8',
+            'Item 9',
+            'Item 10'
+        ];
+
+        function displayItems() {
+            // Get the input value
+            const numberOfItems = document.getElementById('itemNumber').value;
+
+            // Get the specified number of items from the list
+            const selectedItems = itemList.slice(0, numberOfItems);
+
+            // Display the items in the textarea
+            document.getElementById('outputTextarea').value = selectedItems.join('\n');
+        }
+    </script>
+</body>
+</html>

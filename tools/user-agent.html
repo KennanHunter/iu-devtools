@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevTools - Acronym generator</title>
+</head>
+<body>
+   
+    <script>
+        function ua() {
+            const result = document.getElementById('result');
+            result.innerHTML = window.navigator.userAgent;
+        }
+    </script>
+    
+    <a href="../index.html">Home</a>
+
+    <h1>
+        Want to know your user-agent?
+    </h1>
+
+    <button onclick="ua()">Detect</button>
+
+    <p id="result"></p>
+
+
+
+</body>
+</html>
