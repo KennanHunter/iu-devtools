@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevTools - Word and letters counter</title>
+</head>
+<body>
+    
+    <script>
+        function count(params) {
+            const textarea = document.getElementById('input');
+            const words = document.getElementById('wordsnum');
+            const letters = document.getElementById('lettersnum');
+
+            let numWords = textarea.value.split(/\s+/).filter(word => word.length > 0).length;
+            let numLetters = textarea.value.split("").length;
+
+            words.innerHTML = `Number of words: ${numWords}`;
+            letters.innerHTML = `Number of letters: ${numLetters}`;
+
+        }
+    </script>
+
+    <h1>Word and letter counter</h1>
+
+    <label for="input">Enter your text there</label>
+    <br>
+    <textarea type="text" id="input" placeholder="Type here" cols="100" rows="20" oninput="count()"></textarea>
+
+    <p id="wordsnum">
+        Number of words: 0
+    </p>
+    
+    <p id="lettersnum">
+        Number of letters: 0
+    </p>
+
+</body>
+</html>
