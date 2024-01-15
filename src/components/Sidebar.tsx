@@ -1,6 +1,6 @@
+import { AppShell, ScrollArea } from "@mantine/core";
 import { FC } from "react";
 import { links } from "../App";
-import { AppShell, ScrollArea } from "@mantine/core";
 
 export const Sidebar: FC = () => {
   return (
@@ -10,7 +10,7 @@ export const Sidebar: FC = () => {
           {links.map(({ text, href }) => (
             <>
               <li className="p-5">
-                <a href={"/tools/" + href}>{text}</a>
+                <a href={"/#/tools/" + href}>{text}</a>
               </li>
             </>
           ))}

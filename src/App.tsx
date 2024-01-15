@@ -1,15 +1,18 @@
 import { MantineProvider } from "@mantine/core";
 import "@mantine/core/styles.css";
 import { ReactElement } from "react";
-import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import {
+  RouterProvider,
+  createHashRouter
+} from "react-router-dom";
 import "./App.css";
 import { Index } from "./route/Index";
 import { Layout } from "./route/Layout";
+import { CaseConverter } from "./route/tools/CaseConverter";
 import { LoremIpsum } from "./route/tools/LoremIpsum";
 import { PasswordGenerator } from "./route/tools/PasswordGenerator";
-import { UserAgent } from "./route/tools/UserAgent";
 import { StringReverser } from "./route/tools/StringReverser";
-import { CaseConverter } from "./route/tools/CaseConverter";
+import { UserAgent } from "./route/tools/UserAgent";
 
 export const links: { text: string; href: string; content: ReactElement }[] = [
   {
@@ -49,7 +52,7 @@ export const links: { text: string; href: string; content: ReactElement }[] = [
   },
 ];
 
-const router = createBrowserRouter([
+const router = createHashRouter([
   {
     path: "/",
     element: <Layout />,
