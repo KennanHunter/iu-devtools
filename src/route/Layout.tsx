@@ -1,11 +1,10 @@
+import { AppShell, Burger } from "@mantine/core";
+import { useDisclosure } from "@mantine/hooks";
+import { IconHammer } from "@tabler/icons-react";
 import { FC } from "react";
 import { Outlet } from "react-router";
-import { Sidebar } from "../components/Sidebar";
-import { Header } from "../components/Header";
-import { useDisclosure } from "@mantine/hooks";
-import { AppShell, Burger } from "@mantine/core";
-import { IconHammer } from "@tabler/icons-react";
 import { Link } from "react-router-dom";
+import { Sidebar } from "../components/Sidebar";
 
 export const Layout: FC = () => {
   const [opened, { toggle }] = useDisclosure();

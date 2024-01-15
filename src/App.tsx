@@ -1,14 +1,17 @@
+import { MantineProvider } from "@mantine/core";
+import "@mantine/core/styles.css";
+import { ReactElement } from "react";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import "./App.css";
 import { Index } from "./route/Index";
 import { Layout } from "./route/Layout";
 import { LoremIpsum } from "./route/tools/LoremIpsum";
 import { PasswordGenerator } from "./route/tools/PasswordGenerator";
-import "@mantine/core/styles.css";
-import { useDisclosure } from "@mantine/hooks";
-import { MantineProvider } from "@mantine/core";
+import { UserAgent } from "./route/tools/UserAgent";
+import { StringReverser } from "./route/tools/StringReverser";
+import { CaseConverter } from "./route/tools/CaseConverter";
 
-export const links = [
+export const links: { text: string; href: string; content: ReactElement }[] = [
   {
     text: "Lorem Ipsum Generator",
     href: "lorem-ipsum",
@@ -17,7 +20,7 @@ export const links = [
   {
     text: "Case Converter",
     href: "case-converter",
-    content: <></>,
+    content: <CaseConverter />,
   },
   {
     text: "String Reverser",
@@ -33,6 +36,16 @@ export const links = [
     text: "Password Generator",
     href: "password-generator",
     content: <PasswordGenerator />,
+  },
+  {
+    text: "User Agent Detector",
+    href: "user-agent",
+    content: <UserAgent />,
+  },
+  {
+    text: "String Reverser",
+    href: "string-reverser",
+    content: <StringReverser />,
   },
 ];
 
