@@ -1,10 +1,7 @@
 import { MantineProvider } from "@mantine/core";
 import "@mantine/core/styles.css";
 import { ReactElement } from "react";
-import {
-  RouterProvider,
-  createHashRouter
-} from "react-router-dom";
+import { RouterProvider, createHashRouter } from "react-router-dom";
 import "./App.css";
 import { Index } from "./route/Index";
 import { Layout } from "./route/Layout";
@@ -13,6 +10,7 @@ import { LoremIpsum } from "./route/tools/LoremIpsum";
 import { PasswordGenerator } from "./route/tools/PasswordGenerator";
 import { StringReverser } from "./route/tools/StringReverser";
 import { UserAgent } from "./route/tools/UserAgent";
+import { ASCIITable } from "./route/tools/ASCIITable";
 
 export const links: { text: string; href: string; content: ReactElement }[] = [
   {
@@ -49,6 +47,11 @@ export const links: { text: string; href: string; content: ReactElement }[] = [
     text: "String Reverser",
     href: "string-reverser",
     content: <StringReverser />,
+  },
+  {
+    text: "ASCII Table",
+    href: "ascii-table",
+    content: <ASCIITable />,
   },
 ];
 
