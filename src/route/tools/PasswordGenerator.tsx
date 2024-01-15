@@ -1,5 +1,20 @@
 import { FC, useEffect, useMemo, useState } from "react";
 
+const generatePassword = (
+  possibleCharacters: Array<string>,
+  passwordLength: number
+) => {
+  return new Array(passwordLength)
+    .fill(0)
+    .map(
+      () =>
+        possibleCharacters[
+          Math.floor(Math.random() * possibleCharacters.length)
+        ]
+    )
+    .join("");
+};
+
 export const PasswordGenerator: FC = () => {
   const lowercase_letters = "abcdefghijklmnopqrstuvwxyz".split("");
   const uppercase_letters = lowercase_letters.map((char) => char.toUpperCase());
@@ -23,29 +38,18 @@ export const PasswordGenerator: FC = () => {
         useNumbers ? numbers : [],
         useSpecial ? specialChars : [],
       ].flat(),
-    []
+    [useUpperLetters, useLowerLetters, useNumbers, useSpecial]
   );
 
-  const [invalidationCounter, setInvalidationCounter] = useState(0);
-
   useEffect(() => {
-    setResult(
-      new Array(passwordLength)
-        .fill(0)
-        .map(
-          () =>
-            possibleCharacters[
-              Math.floor(Math.random() * possibleCharacters.length)
-            ]
-        )
-        .join("")
-    );
-  }, [passwordLength, possibleCharacters, invalidationCounter]);
+    setResult(generatePassword(possibleCharacters, passwordLength));
+  }, [passwordLength, possibleCharacters]);
 
   return (
     <div>
       <h1>Password generator</h1>
       <label htmlFor="num">Number of characters</label>
+      <br />
       <input
         type="range"
         id="num"
@@ -59,40 +63,47 @@ export const PasswordGenerator: FC = () => {
 
       <br />
 
-      <label htmlFor="lower">lowercase letters</label>
       <input
         type="checkbox"
         id="lower"
         onChange={() => setUseLowerLetters(!useLowerLetters)}
       />
+      <label htmlFor="lower">lowercase letters</label>
 
-      <label htmlFor="upper">uppercase letters</label>
+      <br />
       <input
         type="checkbox"
         id="upper"
         onChange={() => setUseUpperLetters(!useUpperLetters)}
       />
+      <label htmlFor="upper">uppercase letters</label>
 
-      <label htmlFor="numbers">numbers</label>
+      <br />
       <input
         type="checkbox"
         id="numbers"
         onChange={() => setUseNumbers(!useNumbers)}
       />
+      <label htmlFor="numbers">numbers</label>
 
-      <label htmlFor="special">special characters</label>
+      <br />
       <input
         type="checkbox"
         id="special"
         onChange={() => setUseSpecial(!useSpecial)}
       />
-      <br />
+      <label htmlFor="special">special characters</label>
 
-      <button onClick={() => setInvalidationCounter(invalidationCounter + 1)}>
+      <br />
+      <button
+        onClick={() =>
+          setResult(generatePassword(possibleCharacters, passwordLength))
+        }
+      >
         Regenerate password
       </button>
 
-      <pre id="result">{result}</pre>
+      <pre>{result}</pre>
     </div>
   );
 };

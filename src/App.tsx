@@ -4,6 +4,9 @@ import { Index } from "./route/Index";
 import { Layout } from "./route/Layout";
 import { LoremIpsum } from "./route/tools/LoremIpsum";
 import { PasswordGenerator } from "./route/tools/PasswordGenerator";
+import "@mantine/core/styles.css";
+import { useDisclosure } from "@mantine/hooks";
+import { MantineProvider } from "@mantine/core";
 
 export const links = [
   {
@@ -53,7 +56,9 @@ const router = createBrowserRouter([
 function App() {
   return (
     <>
-      <RouterProvider router={router} />
+      <MantineProvider>
+        <RouterProvider router={router} />
+      </MantineProvider>
     </>
   );
 }

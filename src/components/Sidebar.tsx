@@ -1,11 +1,11 @@
 import { FC } from "react";
 import { links } from "../App";
+import { AppShell } from "@mantine/core";
 
 export const Sidebar: FC = () => {
-
   return (
-    <div className="h-full flex-col bg-zinc-600">
-      <ul className="h-full">
+    <AppShell.Navbar p="md">
+      <ul className="flex-grow">
         {links.map(({ text, href }) => (
           <li className=" p-5">
             <a href={"/tools/" + href}>{text}</a>
@@ -13,13 +13,13 @@ export const Sidebar: FC = () => {
         ))}
       </ul>
 
-      <p className="justify-self-end">
+      <p className="p-5 border-t-4 justify-self-end">
         If we happen not to have a tool you need, feel free to open an{" "}
         <a href="https://github.com/JR-Koders/Devtools/issues/new">
           GitHub issue
         </a>
         .
       </p>
-    </div>
+    </AppShell.Navbar>
   );
 };
