@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevTools - Random number generator</title>
+</head>
+
+<body>
+
+    <script>
+        function generate() {
+            const min = parseInt(document.getElementById('min').value);
+            const max = parseInt(document.getElementById('max').value);
+            const output = document.getElementById('output');
+
+            output.innerHTML = `Random number: ${Math.floor(Math.random() * (max - min + 1)) + min}`;
+        }
+    </script>
+
+    <h1>
+        Random number generator
+    </h1>
+
+    <label for="min">Minimum number</label>
+    <input type="number" id="min" value="0">
+
+    <label for="max">Maximum number</label>
+    <input type="number" id="max" value="10">
+
+    <button onclick="generate()">generate</button>
+
+    <p id="output">
+        Random number: 5
+    </p>
+
+
+</body>
+
+</html>
