@@ -6,6 +6,7 @@ export const TextCounter: FC = () => {
 
   return (
     <div>
+      <h1>Text Counter</h1>
       <TextInput value={input} onChange={(e) => setInput(e.target.value)} />
       <Code>
         Number of words:{" "}

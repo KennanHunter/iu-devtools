@@ -7,6 +7,7 @@ export const HashCalculator: FC = () => {
 
   return (
     <div>
+      <h1>Hash Calculator</h1>
       <TextInput
         value={input}
         onChange={(e) => setInput(e.currentTarget.value)}

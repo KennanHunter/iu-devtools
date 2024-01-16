@@ -51,7 +51,7 @@ export const AcronymGenerator: FC = () => {
           return word[0].toUpperCase() + word.substring(1).toLowerCase();
         })
         .join(" "),
-    [input, regenerateIterator]
+    [input, regenerateIterator],
   );
 
   return (

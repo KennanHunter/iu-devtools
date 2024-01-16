@@ -12,7 +12,7 @@ export const DecimalBinary: FC = () => {
     if (isToDecimal) {
       return characters.reduce(
         (prev, cur) => prev || !["0", "1"].includes(cur),
-        false
+        false,
       )
         ? "String can not include non-binary characters"
         : undefined;
@@ -23,7 +23,7 @@ export const DecimalBinary: FC = () => {
           !Array.from({ length: 10 })
             .map((_, index) => index.toString())
             .includes(cur),
-        false
+        false,
       )
         ? "String can not include non-decimal characters"
         : undefined;
