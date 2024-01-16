@@ -1,6 +1,6 @@
 import { Code, Table, TextInput } from "@mantine/core";
-import { FC, useMemo, useState } from "react";
 import CryptoJS from "crypto-js";
+import { FC, useMemo, useState } from "react";
 
 export const HashCalculator: FC = () => {
   const [input, setInput] = useState("");

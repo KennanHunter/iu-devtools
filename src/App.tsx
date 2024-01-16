@@ -5,13 +5,14 @@ import { RouterProvider, createHashRouter } from "react-router-dom";
 import "./App.css";
 import { Index } from "./route/Index";
 import { Layout } from "./route/Layout";
+import { ASCIITable } from "./route/tools/ASCIITable";
 import { CaseConverter } from "./route/tools/CaseConverter";
+import { HashCalculator } from "./route/tools/HashCalculator";
 import { LoremIpsum } from "./route/tools/LoremIpsum";
 import { PasswordGenerator } from "./route/tools/PasswordGenerator";
 import { StringReverser } from "./route/tools/StringReverser";
+import { TextCounter } from "./route/tools/TextCounter";
 import { UserAgent } from "./route/tools/UserAgent";
-import { ASCIITable } from "./route/tools/ASCIITable";
-import { HashCalculator } from "./route/tools/HashCalculator";
 
 export const links: { text: string; href: string; content: ReactElement }[] = [
   {
@@ -58,6 +59,11 @@ export const links: { text: string; href: string; content: ReactElement }[] = [
     text: "Hash Calculator",
     href: "hash-calculator",
     content: <HashCalculator />,
+  },
+  {
+    text: "Text Counter",
+    href: "text-counter",
+    content: <TextCounter />,
   },
 ];
 
