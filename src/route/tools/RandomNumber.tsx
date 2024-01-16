@@ -15,14 +15,14 @@ export const RandomNumber: FC = () => {
   return (
     <div>
       <NumberInput
-        value={min}
-        label={"Minimum Value"}
-        onChange={(e) => setMin(e ? Number.parseInt(e.toString()) ?? 0 : 0)}
-      />
-      <NumberInput
         value={max}
         label={"Maximum Value"}
         onChange={(e) => setMax(e ? Number.parseInt(e.toString()) ?? 0 : 0)}
+      />
+      <NumberInput
+        value={min}
+        label={"Minimum Value"}
+        onChange={(e) => setMin(e ? Number.parseInt(e.toString()) ?? 0 : 0)}
       />
 
       <Button onClick={generateRandomNumber}>Regenerate</Button>

@@ -38,7 +38,7 @@ export const AcronymGenerator: FC = () => {
   const result = useMemo(
     () =>
       input
-        .split("")
+        .split("").filter(char => char !== " ")
         .map((letter) => letter.toLowerCase())
         .map((letter) => {
           if (letter === "") return;
