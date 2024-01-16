@@ -11,6 +11,7 @@ import { PasswordGenerator } from "./route/tools/PasswordGenerator";
 import { StringReverser } from "./route/tools/StringReverser";
 import { UserAgent } from "./route/tools/UserAgent";
 import { ASCIITable } from "./route/tools/ASCIITable";
+import { HashCalculator } from "./route/tools/HashCalculator";
 
 export const links: { text: string; href: string; content: ReactElement }[] = [
   {
@@ -52,6 +53,11 @@ export const links: { text: string; href: string; content: ReactElement }[] = [
     text: "ASCII Table",
     href: "ascii-table",
     content: <ASCIITable />,
+  },
+  {
+    text: "Hash Calculator",
+    href: "hash-calculator",
+    content: <HashCalculator />,
   },
 ];
 
