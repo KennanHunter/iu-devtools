@@ -1,8 +1,9 @@
+import { Button, Checkbox, Slider, Stack } from "@mantine/core";
 import { FC, useEffect, useMemo, useState } from "react";
 
 const generatePassword = (
   possibleCharacters: Array<string>,
-  passwordLength: number,
+  passwordLength: number
 ) => {
   return new Array(passwordLength)
     .fill(0)
@@ -10,7 +11,7 @@ const generatePassword = (
       () =>
         possibleCharacters[
           Math.floor(Math.random() * possibleCharacters.length)
-        ],
+        ]
     )
     .join("");
 };
@@ -21,7 +22,7 @@ export const PasswordGenerator: FC = () => {
   const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0].map((val) => val.toString());
   const specialChars = "!@#$%^&*()_=+{}:;,.?/~`".split("");
 
-  const [passwordLength, setPasswordLength] = useState(0);
+  const [passwordLength, setPasswordLength] = useState(10);
 
   const [result, setResult] = useState("");
 
@@ -38,7 +39,7 @@ export const PasswordGenerator: FC = () => {
         useNumbers ? numbers : [],
         useSpecial ? specialChars : [],
       ].flat(),
-    [useUpperLetters, useLowerLetters, useNumbers, useSpecial],
+    [useUpperLetters, useLowerLetters, useNumbers, useSpecial]
   );
 
   useEffect(() => {
@@ -46,64 +47,49 @@ export const PasswordGenerator: FC = () => {
   }, [passwordLength, possibleCharacters]);
 
   return (
-    <div>
+    <Stack>
       <h1>Password generator</h1>
-      <label htmlFor="num">Number of characters</label>
-      <br />
-      <input
-        type="range"
-        id="num"
-        min="1"
-        max="100"
-        value="20"
-        onInput={(e) => {
-          setPasswordLength(Number.parseInt(e.currentTarget.value) || 10);
-        }}
+
+      <Slider
+        label={"Password Length"}
+        value={passwordLength}
+        max={40}
+        onChange={(e) => setPasswordLength(e)}
       />
 
-      <br />
-
-      <input
-        type="checkbox"
-        id="lower"
+      <Checkbox
+        label={"Lowercase letters"}
+        checked={useLowerLetters}
         onChange={() => setUseLowerLetters(!useLowerLetters)}
       />
-      <label htmlFor="lower">lowercase letters</label>
 
-      <br />
-      <input
-        type="checkbox"
-        id="upper"
-        onChange={() => setUseUpperLetters(!useUpperLetters)}
+      <Checkbox
+        label={"uppercase letters"}
+        checked={useUpperLetters}
+        onChange={() => setUseUpperLetters(!useLowerLetters)}
       />
-      <label htmlFor="upper">uppercase letters</label>
 
-      <br />
-      <input
-        type="checkbox"
-        id="numbers"
+      <Checkbox
+        label={"numbers"}
+        checked={useNumbers}
         onChange={() => setUseNumbers(!useNumbers)}
       />
-      <label htmlFor="numbers">numbers</label>
 
-      <br />
-      <input
-        type="checkbox"
-        id="special"
-        onChange={() => setUseSpecial(!useSpecial)}
+      <Checkbox
+        label={"special characters"}
+        checked={useSpecial}
+        onChange={() => setUseSpecial(!useNumbers)}
       />
-      <label htmlFor="special">special characters</label>
 
-      <br />
-      <button
+      <Button
         onClick={() =>
           setResult(generatePassword(possibleCharacters, passwordLength))
         }
       >
         Regenerate password
-      </button>
+      </Button>
 
       <pre>{result}</pre>
-    </div>
+    </Stack>
   );
 };
