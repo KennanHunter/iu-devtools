@@ -21,6 +21,7 @@ export const MarkdownPreview: FC = () => {
         <Textarea
           value={input}
           onChange={(event) => setInput(event.currentTarget.value)}
+          rows={15}
         />
         <Paper shadow="xl" p="xl">
           <div dangerouslySetInnerHTML={{ __html: output }} />
