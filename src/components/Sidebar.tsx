@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 export const Sidebar: FC = () => {
   return (
     <AppShell.Navbar h={"100%"} p="md">
-      <ScrollArea scrollbars={"y"} h={"85%"} className="flex-grow">
+      <ScrollArea scrollbars={"y"} h={"80%"} className="flex-grow">
         <ul style={{ all: "unset" }}>
           {links.map(({ text, href, icon }) => (
             <NavLink
