@@ -6,6 +6,8 @@ export const CaseConverter: FC = () => {
 
   return (
     <div>
+      <h1>Case Converter</h1>
+
       <TextInput
         value={input}
         onChange={(e) => setInput(e.currentTarget.value)}

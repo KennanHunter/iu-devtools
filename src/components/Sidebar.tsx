@@ -1,29 +1,32 @@
-import { AppShell, ScrollArea } from "@mantine/core";
+import { AppShell, Paper, ScrollArea, NavLink } from "@mantine/core";
 import { FC } from "react";
 import { links } from "../App";
+import { Link } from "react-router-dom";
 
 export const Sidebar: FC = () => {
   return (
     <AppShell.Navbar p="md">
       <ScrollArea scrollbars={"y"} className="flex-grow">
-        <ul>
-          {links.map(({ text, href }) => (
-            <>
-              <li className="p-5">
-                <a href={"/#/tools/" + href}>{text}</a>
-              </li>
-            </>
+        <ul style={{ all: "unset" }}>
+          {links.map(({ text, href, icon }) => (
+            <NavLink
+              component={Link}
+              leftSection={icon ?? <></>}
+              to={"/tools/" + href}
+              key={href}
+              label={text}
+            />
           ))}
         </ul>
       </ScrollArea>
 
-      <p className="p-5 border-t-4 justify-self-end">
+      <Paper>
         If we happen not to have a tool you need, feel free to open an{" "}
-        <a href="https://github.com/JR-Koders/Devtools/issues/new">
+        <Link to="https://github.com/JR-Koders/Devtools/issues/new">
           GitHub issue
-        </a>
+        </Link>
         .
-      </p>
+      </Paper>
     </AppShell.Navbar>
   );
 };

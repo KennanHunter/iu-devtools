@@ -33,23 +33,26 @@ export const ASCIITable: FC = () => {
   }, []);
 
   return (
-    <Table id="asciiTable">
-      <Table.Thead>
-        <Table.Tr>
-          <Table.Th>ASCII Code</Table.Th>
-          <Table.Th>Character</Table.Th>
-          <Table.Th>HTML Entity</Table.Th>
-        </Table.Tr>
-      </Table.Thead>
-      <Table.Tbody>
-        {tableData.map((val) => (
+    <div>
+      <h1>ASCII Table</h1>
+      <Table id="asciiTable">
+        <Table.Thead>
           <Table.Tr>
-            <Table.Td>{val.code}</Table.Td>
-            <Table.Td>{val.character}</Table.Td>
-            <Table.Td>{val.entity}</Table.Td>
+            <Table.Th>ASCII Code</Table.Th>
+            <Table.Th>Character</Table.Th>
+            <Table.Th>HTML Entity</Table.Th>
           </Table.Tr>
-        ))}
-      </Table.Tbody>
-    </Table>
+        </Table.Thead>
+        <Table.Tbody>
+          {tableData.map((val) => (
+            <Table.Tr>
+              <Table.Td>{val.code}</Table.Td>
+              <Table.Td>{val.character}</Table.Td>
+              <Table.Td>{val.entity}</Table.Td>
+            </Table.Tr>
+          ))}
+        </Table.Tbody>
+      </Table>
+    </div>
   );
 };
