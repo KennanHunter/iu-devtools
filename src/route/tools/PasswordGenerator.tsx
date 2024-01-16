@@ -2,7 +2,7 @@ import { FC, useEffect, useMemo, useState } from "react";
 
 const generatePassword = (
   possibleCharacters: Array<string>,
-  passwordLength: number
+  passwordLength: number,
 ) => {
   return new Array(passwordLength)
     .fill(0)
@@ -10,7 +10,7 @@ const generatePassword = (
       () =>
         possibleCharacters[
           Math.floor(Math.random() * possibleCharacters.length)
-        ]
+        ],
     )
     .join("");
 };
@@ -38,7 +38,7 @@ export const PasswordGenerator: FC = () => {
         useNumbers ? numbers : [],
         useSpecial ? specialChars : [],
       ].flat(),
-    [useUpperLetters, useLowerLetters, useNumbers, useSpecial]
+    [useUpperLetters, useLowerLetters, useNumbers, useSpecial],
   );
 
   useEffect(() => {

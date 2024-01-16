@@ -3,11 +3,14 @@ import "@mantine/core/styles.css";
 import {
   IconAbc,
   IconBinary,
+  IconClock,
   IconCodeCircle,
   IconHash,
   IconLetterA,
+  IconList,
   IconListLetters,
   IconMarkdown,
+  IconNumber,
   IconPassword,
   IconSpace,
   IconTextCaption,
@@ -29,6 +32,10 @@ import { TextCounter } from "./route/tools/TextCounter";
 import { UserAgent } from "./route/tools/UserAgent";
 import { DecimalBinary } from "./route/tools/DecimalBinary";
 import { MarkdownPreview } from "./route/tools/MarkdownPreview";
+import { RandomItemFromList } from "./route/tools/RandomItemFromList";
+import { RandomNumber } from "./route/tools/RandomNumber";
+import { Stopwatch } from "./route/tools/Stopwatch";
+import { Timer } from "./route/tools/Timer";
 
 export const links: {
   text: string;
@@ -102,6 +109,30 @@ export const links: {
     href: "markdown",
     content: <MarkdownPreview />,
     icon: <IconMarkdown />,
+  },
+  {
+    text: "Random Item From List",
+    href: "random-item",
+    content: <RandomItemFromList />,
+    icon: <IconList />,
+  },
+  {
+    text: "Random Number",
+    href: "random-number",
+    content: <RandomNumber />,
+    icon: <IconNumber />,
+  },
+  {
+    text: "Stopwatch",
+    href: "stopwatch",
+    content: <Stopwatch />,
+    icon: <IconClock />,
+  },
+  {
+    text: "Timer",
+    href: "timer",
+    content: <Timer />,
+    icon: <IconClock />,
   },
 ];
 

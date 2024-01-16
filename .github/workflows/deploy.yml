@@ -36,7 +36,7 @@ jobs:
         with:
           # Upload entire dist folder
           path: ./dist
-          
+
   deploy:
     name: Deploy
     environment:

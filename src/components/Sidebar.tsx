@@ -1,12 +1,12 @@
-import { AppShell, Paper, ScrollArea, NavLink } from "@mantine/core";
+import { AppShell, Paper, ScrollArea, NavLink, Divider } from "@mantine/core";
 import { FC } from "react";
 import { links } from "../App";
 import { Link } from "react-router-dom";
 
 export const Sidebar: FC = () => {
   return (
-    <AppShell.Navbar p="md">
-      <ScrollArea scrollbars={"y"} className="flex-grow">
+    <AppShell.Navbar h={"100%"} p="md">
+      <ScrollArea scrollbars={"y"} h={"85%"} className="flex-grow">
         <ul style={{ all: "unset" }}>
           {links.map(({ text, href, icon }) => (
             <NavLink
@@ -21,6 +21,7 @@ export const Sidebar: FC = () => {
       </ScrollArea>
 
       <Paper>
+        <Divider py={"md"} />
         If we happen not to have a tool you need, feel free to open an{" "}
         <Link to="https://github.com/JR-Koders/Devtools/issues/new">
           GitHub issue

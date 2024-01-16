@@ -36,7 +36,12 @@ export const Layout: FC = () => {
 
       <Sidebar />
 
-      <AppShell.Main>
+      <AppShell.Main
+        style={{
+          width: "100%",
+          height: "100%",
+        }}
+      >
         <Outlet />
       </AppShell.Main>
     </AppShell>

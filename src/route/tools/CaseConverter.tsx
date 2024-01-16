@@ -34,7 +34,7 @@ export const CaseConverter: FC = () => {
             {input.replace(
               /\w\S*/g,
               (txt) =>
-                txt.charAt(0).toUpperCase() + txt.substring(1).toLowerCase()
+                txt.charAt(0).toUpperCase() + txt.substring(1).toLowerCase(),
             )}
           </Code>
         </>

@@ -6,6 +6,8 @@ export const StringReverser: FC = () => {
 
   return (
     <div>
+      <h1>String Reverser</h1>
+
       <TextInput
         label={"Input String"}
         value={input}
