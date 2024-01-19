@@ -1,3 +1,3 @@
 # Developer Tools
 
-Developed by Jules Fagard and Kennan Hunter
+Developed by "JR-Koders" and Kennan Hunter
